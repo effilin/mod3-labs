@@ -192,9 +192,46 @@ printCity(richmond);
 
 // Question 9
 //
-let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
-let dog1 = 'Bingo';
-let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+let teamSports = ['Hockey', 'Cricket', 'Volleyball'] /* This is an Array */
+const teamSportsDeep =JSON.parse(JSON.stringify(teamSports));
+let dog1 = 'Bingo'; /* this is an variable */
+let cat1 = { name: 'Fluffy', breed: 'Siberian' }; /* this is an object with properties */
+const Cat1Deep =JSON.parse(JSON.stringify(cat1));
+let moreSports = teamSportsDeep;
+  moreSports.push("Snowboarding");
+  moreSports.unshift("Soccer");
 
-  
-   
+  console.log(teamSports); // team sports did change because it is an Array
+
+let dog2 = dog1;
+dog2 ='Ellie';
+
+let cat2 = Cat1Deep;
+cat2.name = 'Archie';
+console.log(moreSports); // moreSports was made into an array, therefor changeable
+console.log(dog1); // dog1 is a variable, it is not changeable
+console.log(cat2); // an object with properties is changeable
+console.log( typeof(dog1));
+console.log( typeof(teamSports));
+console.log( typeof(cat1));
+console.log(teamSportsDeep);
+console.log(Cat1Deep);
+
+//Question 10
+//
+
+class Person {
+   constructor(name, age) {
+   this.name = name;
+   this.age = age;
+   this.human = true;
+   this.driving = () => this.age > 16;
+};
+};
+let effieN = new Person('Eva', 34 );
+console.log(effieN);
+let ellieN = new Person('Ellie', 54 );
+console.log(ellieN);
+let archieN = new Person('Archie', 3 );
+console.log(archieN);
+console.log(archieN.driving());
