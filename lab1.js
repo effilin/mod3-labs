@@ -209,7 +209,7 @@ dog2 ='Ellie';
 let cat2 = Cat1Deep;
 cat2.name = 'Archie';
 console.log(moreSports); // moreSports was made into an array, therefor changeable
-console.log(dog1); // dog1 is a variable, it is not changeable
+console.log(dog2); // dog1 is a variable, let is changeable
 console.log(cat2); // an object with properties is changeable
 console.log( typeof(dog1));
 console.log( typeof(teamSports));
