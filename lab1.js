@@ -155,6 +155,7 @@ let resultNew = (a + b < 10) ? `${a} +  ${b} is less than 10` : `${a} + ${b} is 
 
          halfTime(score, fouls) {
             console.log('Halftime score is ' + this.score + '.' + ' Foul count:' + this.fouls);
+            return this.score, this.fouls;
          },
          fullTimeFinal(score, fouls) {
            console.log('Final Score is ' + this.score + '.' + ' Foul count:' + this.fouls);
