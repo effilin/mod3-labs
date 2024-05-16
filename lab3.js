@@ -149,15 +149,17 @@ console.log({...car, model: 'deluxe'});
 setTimeout(boundDescription, 2000, 'Answer5:E');
 //
 
-/// Question 6>
-/*
+/// Question 6
+
 function multiply(a, b,) {
     console.log( a * b );
 
     }
 // A:
+// 
+/*
 const delay = new Function("time", "return setTimeout(() => this, time)")
-multiply.prototype = delay;
+multiply.prototype = delay();
 console.log(multiply.delay(500)(5, 5)); // prints 25 after 500 milliseconds
 
 //B:
@@ -226,6 +228,9 @@ class DigitalClock {
     const myClock = new DigitalClock('my clock:')
 
     class PrecisionClock extends DigitalClock {
+        constructor(prefix) {
+            super(prefix)
+            }
         display() { 
             super.display();
             this.precision();
@@ -241,6 +246,16 @@ class DigitalClock {
     showMeTicks.precision();
 
     class AlarmClock extends DigitalClock {
+        constructor(prefix, hh, mm) 
+        {
+            super(prefix);
+            this.hh = hh;
+            this.mm = mm;
+        }
+        display() {
+            super.display;
+            this.wakeUp;
+        }
 
         wakeUp(hh = 7, mm = 0) {
             let date3 = new Date();
@@ -251,5 +266,21 @@ class DigitalClock {
         }
     }
     const setAlarm = new AlarmClock('wake me up');
-    setAlarm.start();
-    setAlarm.wakeUp(8,2);
+
+    
+   
+
+    // Question 9
+    //A:
+    function randomDelay(funct) {
+        const randomDelay = Math.floor(Math.random() * 21) * 1000;
+        return new Promise((resolve, reject) => 
+             setTimeout(randomDelay % 2 === 0 ? resolve: reject, randomDelay, 'The delay was '+ randomDelay));
+        }
+
+        randomDelay() 
+        .then((randomDelay) => console.log( `There was a delay of ${randomDelay} ms`))
+        .catch(() => console.log('Failed Delay'));
+    //B
+
+       
