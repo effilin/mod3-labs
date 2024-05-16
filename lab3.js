@@ -271,7 +271,6 @@ class DigitalClock {
    
 
     // Question 9
-    //A:
     function randomDelay(funct) {
         const randomDelay = Math.floor(Math.random() * 21) * 1000;
         return new Promise((resolve, reject) => 
@@ -281,6 +280,24 @@ class DigitalClock {
         randomDelay() 
         .then((randomDelay) => console.log( `There was a delay of ${randomDelay} ms`))
         .catch(() => console.log('Failed Delay'));
-    //B
+    // Question 10
+    //
+    import fetch from 'node-fetch'
+    globalThis.fetch = fetch  
+
+function fetchURLData(url) {
+let fetchPromise = fetch(url).then(response => {
+if (response.status === 200) {
+return response.json();
+} else {
+throw new Error(`Request failed with status ${response.status}`);
+}
+
+});
+return fetchPromise;
+}
+fetchURLData('https://jsonplaceholder.typicode.com/todos/1')
+.then(data => console.log(data))
+.catch(error => console.error(error.message));
 
        
